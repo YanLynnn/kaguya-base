@@ -1,0 +1,4 @@
+node_modules
+session
+.__*.mjs
+.cache
