@@ -44,10 +44,10 @@ Edit `config.js`, lalu restart bot.
 
 | Variabel | Fungsi |
 | --- | --- |
-| `global.owners` | Nomor owner (tanpa `+` dan spasi) |
-| `global.ownername` | Nama owner |
-| `global.nomorbot` | Nomor bot (untuk pairing code) |
-| `global.namebot` | Nama bot |
+| `global.owners` | 6288294395623 (tanpa `+` dan spasi) |
+| `global.ownername` | BILZ BOTZ|
+| `global.nomorbot` | 6288294395623 (untuk pairing code) |
+| `global.namebot` | BILZ MULTIDEVICE |
 | `global.thumb` | URL gambar menu (kosongkan untuk teks saja) |
 | `global.public` | `true` semua orang bisa pakai, `false` owner saja |
 | `global.prefix` | Daftar prefix command |
