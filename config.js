@@ -7,13 +7,23 @@ global.namebot = 'kaguya base'
 
 global.thumb = { menu: 'https://cdn.zass.in/yERRcGpCb2.jpg' }              // URL gambar menu (kosong = teks saja)
 
-global.public = true                  // true = semua orang bisa pakai | false = owner saja
+global.public = true                  // mode awal. true = public | false = self (bisa diganti dari chat: .public / .self)
 global.prefix = ['', '.', '!', ',']
 
 global.mess = {
     owner: 'Khusus owner.',
     group: 'Fitur ini hanya bisa dipakai di grup.',
-    private: 'Fitur ini hanya bisa dipakai di private chat.'
+    private: 'Fitur ini hanya bisa dipakai di private chat.',
+    admin: 'Fitur ini khusus admin grup.',
+    botAdmin: 'Jadikan bot admin grup dulu supaya fitur ini bisa dipakai.'
+}
+
+global.cooldown = 3           // jeda antar command per user (detik). Per plugin: handler.cooldown = 10. Owner dilewati
+global.errorlog = true        // true = detail error command dikirim ke chat owner
+global.restartMode = 'auto'   // .restart -> 'auto' | 'exit' (biarkan pm2/panel yang menyalakan ulang) | 'spawn' (bot menyalakan dirinya sendiri)
+
+global.api = {
+    tiktok: 'https://www.tikwm.com/api/'   // dipakai .tiktok (layanan pihak ketiga, bisa berubah / mati)
 }
 
 global.optimizer = {
