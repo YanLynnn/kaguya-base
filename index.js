@@ -1,4 +1,5 @@
 import './config.js'
+import './lib/settings.js'
 
 import chalk from 'chalk'
 import pino from 'pino'
@@ -13,6 +14,8 @@ import makeWASocket, {
     Browsers
 } from '@whiskeysockets/baileys'
 import { serialize } from './lib/serialize.js'
+import { sendButtons } from './lib/button.js'
+import { watchGroupEvents } from './lib/groupEvents.js'
 import { decodeJid, watchLidEvents } from './lib/lid.js'
 import {
     opt, startOptimizer, createFloodGuard, createSendQueue, backoffDelay,
@@ -101,6 +104,14 @@ async function start() {
         return sent
     }
 
+    // pesan tombol/list: lewat antrean anti-ban yang sama
+    sock.sendButtons = async (jid, data, options) => {
+        const sent = await enqueue(jid, () => sendButtons(sock, jid, data, options))
+        track(sent?.key?.id)
+        rememberMessage(sent?.key?.id, sent?.message)
+        return sent
+    }
+
     // metadata grup: cache + hapus saat ada perubahan
     const rawMeta = sock.groupMetadata.bind(sock)
     sock.groupMetadata = async (jid) => {
@@ -114,6 +125,7 @@ async function start() {
     sock.ev.on('group-participants.update', ({ id }) => groupCache.del(id))
 
     watchLidEvents(sock)
+    watchGroupEvents(sock)
     sock.ev.on('creds.update', saveCreds)
 
     // belum login: pilih QR atau pairing code
