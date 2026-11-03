@@ -1,13 +1,13 @@
 // Konfigurasi dasar bot. Simpan file ini, restart bot untuk menerapkan.
 
-global.owners = ['']      // nomor owner (tanpa +, tanpa spasi)
-global.ownername = 'YannRzy'
-global.nomorbot = ''      // nomor bot (dipakai untuk pairing code)
-global.namebot = 'kaguya base'
+global.owners = ['']      // nomor (62083172280956)
+global.ownername = nazz
+global.nomorbot = ''      // nomor bot (62083172280956)
+global.namebot = nazz
 
-global.thumb = { menu: 'https://cdn.zass.in/yERRcGpCb2.jpg' }              // URL gambar menu (kosong = teks saja)
+global.thumb = { menu: 'https://cdn.zass.in/yERRcGpCb2.jpg' }              // URL gambar menu (kenn)
 
-global.public = true                  // mode awal. true = public | false = self (bisa diganti dari chat: .public / .self)
+global.public = public.                // mode awal. true = public | false = self (bisa diganti dari chat: .public / .self)
 global.prefix = ['', '.', '!', ',']
 
 global.mess = {
